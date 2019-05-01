@@ -1,0 +1,39 @@
+<header>
+  <nav class="navbar navbar-light bg-info">
+      <a class="navbar-brand text-white" (click)="recarregar()">
+        <h3>
+          EletroStore
+        </h3>
+      </a>
+      <form class="form-inline">
+        <a class="text-white" (click)="openModal()">
+          <i class="material-icons">shopping_cart</i>
+        </a>
+      </form>
+  </nav>
+</header>
+
+<body class="container">
+  <br><br>
+
+  <form class="form-row">
+    <div class="form-group col-9">
+      <input type="text" name="busca" [(ngModel)]="busca" class="form-control">
+    </div>
+    <div class="form-group col-3">
+      <button (click)="buscar()" class="btn btn-outline-info">Buscar</button>
+    </div>
+  </form>
+
+  <div clas="align-items-center">
+  <div class="row smxl-auto">
+    <span *ngFor="let produto of produtos" class="col">
+      <a routerLink="/detail/{{produto.id}}" class="text-secondary">
+        <img src="{{produto.imagem}}" width="300" height="200" class="rounded"><br>
+          <span>{{produto.nome}}</span><br>
+          <span>Preço: {{produto.preco}}</span>
+      </a>
+    </span>
+  </div>
+  </div>
+</body>

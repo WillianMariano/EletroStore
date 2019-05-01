@@ -1,0 +1,16 @@
+<h3>Entre no EletroStore</h3>
+<form>
+  <label>Usuário: </label>
+  <input type="text" name="usuario" [(ngModel)]="usuario"/>
+  <br /><br />
+
+  <label>Senha: </label>
+  <input type="password" name="senha" [(ngModel)]="senha"/>
+
+  <button (click)="identificaUsuario()">Entrar</button>
+
+</form>
+
+
+<app-home [usuario]="nomeUsuario"></app-home>
+

@@ -1,0 +1,33 @@
+<header>
+    <nav class="navbar navbar-light bg-info">
+        <a class="navbar-brand text-white" href="#" routerLink="/home">
+          <h3>
+            EletroStore
+          </h3>
+        </a>
+        <form class="form-inline">
+            <button class="btn btn-outline-light" routerLink="/home">Voltar</button>
+        </form>
+    </nav>
+  </header>
+
+<body class="container align-items-center">
+  <br><br><br>
+
+  <div *ngIf="produto" class="row">
+    <div class="col-auto">
+      <h4>{{produto.nome}}</h4>
+      <img src="{{produto.imagem}}" width="400" height="250" class="rounded">
+    </div>
+
+    <div class="col-auto">
+      <br><br>
+      <span><b class="text-info">Preço: </b>{{produto.preco}}</span><br>
+      <span><b class="text-info">Descrição: </b>{{produto.descricao}}</span>
+    </div>
+  </div>
+
+  <div *ngIf="produto">
+    <button (click)="reservar(produto)" class="btn btn-info">Reservar</button>
+  </div>
+</body>
